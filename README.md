@@ -33,10 +33,10 @@ npm install && npm start
 - GET /tweets/:id : get a specific tweet created by a user.
 - DELETE /tweets/:id : delete a tweet created by a user.
 - PATCH /tweets/:id : update a tweet created by a user.
-- POST /chats:
-- GET /chats:
-- POST /messages:
-- GET /messages/:chatID :
+- POST /chats: create chat. must provide userId(the user the current user want to chat with). If they already have a chat return the chat stored otherwise create a new chat
+- GET /chats: get all chats by this user 
+- POST /messages: send a message. must provide message and chat id. create a message with those and update the latest message of the chat with chat id
+- GET /messages/:chatID : get specific info about a chat
 
 #### socket io
 - use socket io so whenever a user send a message to another user, the other user can get the message immediately without refreshing.
