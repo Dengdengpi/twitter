@@ -24,7 +24,7 @@ app.use('/chats', authenticateUser, chatRouter);
 app.use('/messages', messageRouter);
 
 
-
+app.use('/hello', () => "hello")
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
