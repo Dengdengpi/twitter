@@ -29,10 +29,11 @@ app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
 
+const PORT = process.env.PORT || 3000
 const start = async () => {
   try {
     await connectDB(process.env.MONGO_URI);
-    const server = app.listen(3000, () =>
+    const server = app.listen(PORT, () =>
       console.log(`Server is listening on port 3000...`)
     );
     const io = require("socket.io")(server, {
